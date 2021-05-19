@@ -1,23 +1,40 @@
-# Next.js + Tailwind CSS Example
+<div align="center">
+   <img
+    src="https://media.giphy.com/media/5Uww26Bo0A68XGlAvz/giphy.gif"
+    alt="Logo Final Space"
+   />
+   <p>Se vira nos 30 com API do Espaço Final (versão brasileira, Hebert Richards)</p>
+</div>
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) (v2.1) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+<h1 align="center">Final Space App</h1>
 
-It uses the new [`Just-in-Time Mode`](https://tailwindcss.com/docs/just-in-time-mode) for Tailwind CSS.
+# Tabela de conteúdos
 
-## Deploy your own
+<!--ts-->
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+- [Tabela de Conteudo](#tabela-de-conteudo)
+- [Tecnologias](#tecnologias)
+- [Como usar](#como-usar)
+<!--te-->
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+### Tecnologias
 
-## How to use
+- [React](https://pt-br.reactjs.org/)
+- [Eslint](https://eslint.org/), [Prettier](https://prettier.io/), [EditorConfig](http://editorconfig.org)
+- [Docker](https://www.docker.com/) (Neste projeto prometo configurar docker)
+- [Tailwind](https://tailwindcss.com/)
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+### Como usar
 
 ```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+# Clone o repositório
+$ git clone
+
+# Entre na pasta
+$ cd final-space-app
+
+# Executar o projeto
+$ yarn dev
+
+```
