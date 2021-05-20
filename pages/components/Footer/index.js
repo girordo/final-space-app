@@ -14,7 +14,7 @@ const Footer = () => {
               by
             </p>
             <a
-              className="flex-col mx-2"
+              className="flex-col mx-2 hover:text-primary-600"
               href="https://github.com/girordo"
               target="_blank"
               rel="noreferrer">

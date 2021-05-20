@@ -23,6 +23,7 @@
 - [Eslint](https://eslint.org/), [Prettier](https://prettier.io/), [EditorConfig](http://editorconfig.org)
 - [Docker](https://www.docker.com/) (Neste projeto prometo configurar docker)
 - [Tailwind](https://tailwindcss.com/)
+- [Framer Motion](https://www.framer.com/motion/)
 
 ### Como usar
 
