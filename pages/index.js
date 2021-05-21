@@ -1,66 +1,72 @@
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Head from "next/head";
+import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const Home = () => {
+const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
+
+export async function getServerSideProps() {
+  const res = await fetch(defaultEndpoint);
+  const data = await res.json();
+
+  return {
+    props: {
+      data,
+    },
+  };
+}
+
+const Home = ({ data }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Create Next App</title>
+        <title>Final Space App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to
-          <a className="text-blue-600" href="https://nextjs.org">
+        <motion.h1 className="text-6xl font-bold my-8">
+          Mais um projeto com <br />
+          <a
+            className="text-primary-600 hover:text-secondary-400 transition-colors"
+            href="https://nextjs.org">
             Next.js!
+            <br />
           </a>
-        </h1>
+          TailwindCSS
+        </motion.h1>
 
         <p className="mt-3 text-2xl">
-          Get started by editing
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
+          Só que dessa vez consumindo a API do Final Space
         </p>
 
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          {data.map(({ id, name, status, species, gender, img_url: image }) => (
+            <Link key={id} href="/character/[id]" as={`/character/${id}`}>
+              <motion.a
+                href="https://nextjs.org/docs"
+                className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg  transition-colors hover:text-primary-600 focus:text-primary-600"
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.4 },
+                }}>
+                <img
+                  src={image}
+                  className="rounded-2xl"
+                  alt="Character from Final Space"
+                />
+                <h3 className="text-2xl font-bold">{name}</h3>
+                <h4>{status}</h4>
+                <h4>{species}</h4>
+                <h4>{gender}</h4>
+                <p className="mt-4 text-xl">
+                  Find in-depth information about Next.js features and API.
+                </p>
+              </motion.a>
+            </Link>
+          ))}
         </div>
       </main>
       <Footer />
