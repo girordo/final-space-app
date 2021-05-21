@@ -38,6 +38,14 @@ const Character = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+        <img
+          src={characterData.img_url}
+          className="rounded-2xl"
+          alt="Character Final Space"
+        />
+        <h1>{characterData.name}</h1>
+      </main>
       <Footer />
     </div>
   );

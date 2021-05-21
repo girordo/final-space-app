@@ -27,44 +27,31 @@ const Home = ({ data }) => {
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <motion.div
-          initial="hidden"
-          animated="visible"
-          variants={{
-            hidden: {
-              scale: 0.8,
-              opacity: 0,
-            },
-            visible: {
-              scale: 1,
-              opacity: 1,
-              transition: {
-                delay: 0.4,
-              },
-            },
-          }}>
-          <h1 className="text-6xl font-bold my-8">
-            Mais um projeto com <br />
-            <a
-              className="text-primary-600 hover:text-secondary-400 transition-colors"
-              href="https://nextjs.org">
-              Next.js!
-              <br />
-            </a>
-            TailwindCSS
-          </h1>
+        <motion.h1 className="text-6xl font-bold my-8">
+          Mais um projeto com <br />
+          <a
+            className="text-primary-600 hover:text-secondary-400 transition-colors"
+            href="https://nextjs.org">
+            Next.js!
+            <br />
+          </a>
+          TailwindCSS
+        </motion.h1>
 
-          <p className="mt-3 text-2xl">
-            Só que dessa vez consumindo a API do Final Space
-          </p>
-        </motion.div>
+        <p className="mt-3 text-2xl">
+          Só que dessa vez consumindo a API do Final Space
+        </p>
 
         <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/character/[id]" as={`/character/${id}`}>
-              <a
+              <motion.a
                 href="https://nextjs.org/docs"
-                className="p-6 my-6 text-left border w-96 rounded-xl hover:text-primary-600 focus:text-primary-600 transition-colors">
+                className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg  transition-colors hover:text-primary-600 focus:text-primary-600"
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.4 },
+                }}>
                 <img
                   src={image}
                   className="rounded-2xl"
@@ -77,7 +64,7 @@ const Home = ({ data }) => {
                 <p className="mt-4 text-xl">
                   Find in-depth information about Next.js features and API.
                 </p>
-              </a>
+              </motion.a>
             </Link>
           ))}
         </div>
