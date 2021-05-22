@@ -36,8 +36,7 @@ const AllLocations = ({ data }) => {
         <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
           {data.map(({ id, name, img_url: image }) => (
             <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
-              <motion.a
-                href="https://nextjs.org/docs"
+              <motion.div
                 className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileHover={{
                   scale: 1.05,
@@ -53,7 +52,7 @@ const AllLocations = ({ data }) => {
                 <p className="mt-4 text-xl">
                   Find in-depth information about Next.js features and API.
                 </p>
-              </motion.a>
+              </motion.div>
             </Link>
           ))}
         </div>
