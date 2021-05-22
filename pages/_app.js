@@ -16,7 +16,7 @@ function MyApp({ Component, pageProps, router }) {
             opacity: 1,
           },
         }}>
-        <Component {...pageProps} />;
+        <Component {...pageProps} />
       </motion.div>
     </AnimatePresence>
   );

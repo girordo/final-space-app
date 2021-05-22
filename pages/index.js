@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
 
@@ -42,7 +42,7 @@ const Home = ({ data }) => {
           Só que dessa vez consumindo a API do Final Space
         </p>
 
-        <div className="grid grid-cols-3 gap-4 w-full">
+        <div className="grid grid-cols-4 gap-6">
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/character/[id]" as={`/character/${id}`}>
               <motion.a

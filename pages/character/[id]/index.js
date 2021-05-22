@@ -2,8 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../../components/Header";
+import Footer from "../../../components/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
 
