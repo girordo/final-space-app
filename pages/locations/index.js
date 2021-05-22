@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import { motion } from "framer-motion";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
+const defaultEndpoint = "https://finalspaceapi.com/api/v0/location";
 
 export async function getServerSideProps() {
   const res = await fetch(defaultEndpoint);
@@ -18,11 +18,11 @@ export async function getServerSideProps() {
   };
 }
 
-const Home = ({ data }) => {
+const AllLocations = ({ data }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Final Space App</title>
+        <title>Localizações</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
@@ -44,7 +44,7 @@ const Home = ({ data }) => {
 
         <div className="grid grid-cols-4 gap-6">
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
-            <Link key={id} href="/character/[id]" as={`/character/${id}`}>
+            <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
               <motion.a
                 href="https://nextjs.org/docs"
                 className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg  transition-colors hover:text-primary-600 focus:text-primary-600"
@@ -55,7 +55,7 @@ const Home = ({ data }) => {
                 <img
                   src={image}
                   className="rounded-2xl"
-                  alt="Character from Final Space"
+                  alt="Location from Final Space"
                 />
                 <h3 className="text-2xl font-bold">{name}</h3>
                 <h4>{status}</h4>
@@ -74,4 +74,4 @@ const Home = ({ data }) => {
   );
 };
 
-export default Home;
+export default AllLocations;
