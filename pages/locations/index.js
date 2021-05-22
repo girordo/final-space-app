@@ -34,7 +34,7 @@ const AllLocations = ({ data }) => {
           </h1>
         </h1>
         <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
-          {data.map(({ id, name, status, species, gender, img_url: image }) => (
+          {data.map(({ id, name, img_url: image }) => (
             <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
               <motion.a
                 href="https://nextjs.org/docs"
@@ -50,8 +50,6 @@ const AllLocations = ({ data }) => {
                 />
                 <h3 className="text-2xl font-bold">{name}</h3>
                 <h4>{status}</h4>
-                <h4>{species}</h4>
-                <h4>{gender}</h4>
                 <p className="mt-4 text-xl">
                   Find in-depth information about Next.js features and API.
                 </p>

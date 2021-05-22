@@ -58,13 +58,6 @@ const Location = ({ data }) => {
               <li className="flex flex-row mb-0.5 text-sm">
                 Type:<h4 className="font-semibold">{locationData.type}</h4>
               </li>
-              <li className="flex flex-row mb-0.5 text-sm">
-                Gender:<h4 className="font-semibold">{locationData.gender}</h4>
-              </li>
-              <li className="flex flex-row text-sm">
-                Species:
-                <h4 className="font-semibold">{locationData.species}</h4>
-              </li>
             </ul>
           </div>
         </motion.section>
