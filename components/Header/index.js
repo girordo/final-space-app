@@ -21,7 +21,7 @@ const Header = () => {
             <Link href="/locations">Localizações</Link>
           </li>
           <li className="hover:text-primary-600 text-xl font-semibold">
-            Episódios
+            <Link href="/episodes">Episódios</Link>
           </li>
         </ul>
       </nav>
