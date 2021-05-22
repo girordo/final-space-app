@@ -42,7 +42,7 @@ const Home = ({ data }) => {
           Só que dessa vez consumindo a API do Final Space
         </p>
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
+        <div className="grid grid-cols-3 gap-4 w-full">
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/character/[id]" as={`/character/${id}`}>
               <motion.a
