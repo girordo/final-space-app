@@ -34,7 +34,7 @@ const AllCharacters = ({ data }) => {
           </h1>
         </h1>
 
-        <div className="grid grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
               <motion.a

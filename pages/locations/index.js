@@ -27,27 +27,18 @@ const AllLocations = ({ data }) => {
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <motion.h1 className="text-6xl font-bold my-8">
-          Mais um projeto com <br />
-          <a
-            className="text-primary-600 hover:text-secondary-400 transition-colors"
-            href="https://nextjs.org">
-            Next.js!
-            <br />
-          </a>
-          TailwindCSS
-        </motion.h1>
-
-        <p className="mt-3 text-2xl">
-          Só que dessa vez consumindo a API do Final Space
-        </p>
-
-        <div className="grid grid-cols-4 gap-6">
+        <h1 className="flex flex-row text-6xl font-bold my-20">
+          Todas as
+          <h1 className="text-primary-600 hover:text-secondary-400 ml-4">
+            localizações
+          </h1>
+        </h1>
+        <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
               <motion.a
                 href="https://nextjs.org/docs"
-                className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg  transition-colors hover:text-primary-600 focus:text-primary-600"
+                className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.4 },
