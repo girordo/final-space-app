@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Header = () => {
   return (
@@ -12,10 +13,10 @@ const Header = () => {
         />
         <ul className="flex flex-row w-full block">
           <li className="hover:text-primary-600 text-xl font-semibold">
-            Personagens
+            <Link href="/characters">Personagens</Link>
           </li>
           <li className="mx-20 hover:text-primary-600 text-xl font-semibold">
-            Localizações
+            <Link href="/locations">Localizações</Link>
           </li>
           <li className="hover:text-primary-600 text-xl font-semibold">
             Episódios

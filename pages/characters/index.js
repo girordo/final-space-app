@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-const defaultEndpoint = "https://finalspaceapi.com/api/v0/location";
+const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
 
 export async function getServerSideProps() {
   const res = await fetch(defaultEndpoint);
@@ -18,33 +18,25 @@ export async function getServerSideProps() {
   };
 }
 
-const AllLocations = ({ data }) => {
+const AllCharacters = ({ data }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Localizações</title>
+        <title>Todos os personagens</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <motion.h1 className="text-6xl font-bold my-8">
-          Mais um projeto com <br />
-          <a
-            className="text-primary-600 hover:text-secondary-400 transition-colors"
-            href="https://nextjs.org">
-            Next.js!
-            <br />
-          </a>
-          TailwindCSS
-        </motion.h1>
-
-        <p className="mt-3 text-2xl">
-          Só que dessa vez consumindo a API do Final Space
-        </p>
+        <h1 className="flex flex-row text-6xl font-bold my-20">
+          Todos os{" "}
+          <h1 className="ml-4 text-primary-600 hover:text-secondary-600">
+            personagens
+          </h1>
+        </h1>
 
         <div className="grid grid-cols-4 gap-6">
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
-            <Link key={id} href="/location/[id]" as={`/location/${id}`}>
+            <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
               <motion.a
                 href="https://nextjs.org/docs"
                 className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg  transition-colors hover:text-primary-600 focus:text-primary-600"
@@ -55,7 +47,7 @@ const AllLocations = ({ data }) => {
                 <img
                   src={image}
                   className="rounded-2xl"
-                  alt="Location from Final Space"
+                  alt="Character from Final Space"
                 />
                 <h3 className="text-2xl font-bold">{name}</h3>
                 <h4>{status}</h4>
@@ -74,4 +66,4 @@ const AllLocations = ({ data }) => {
   );
 };
 
-export default AllLocations;
+export default AllCharacters;
