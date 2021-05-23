@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import Head from "next/head";
-import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
-
-export async function getServerSideProps() {
-  const res = await fetch(defaultEndpoint);
-  const data = await res.json();
-
-  return {
-    props: {
-      data,
-    },
-  };
-}
-
-const Home = ({ data }) => {
+const Home = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
