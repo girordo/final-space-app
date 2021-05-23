@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@testing-library/react": "^11.2.7",
     "dayjs": "^1.10.4",
     "framer-motion": "^4.1.17",
     "next": "latest",
