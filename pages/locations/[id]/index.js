@@ -18,7 +18,7 @@ export async function getServerSideProps() {
   };
 }
 
-const Location = ({ data }) => {
+const Location = () => {
   const router = useRouter();
   const { id } = router.query;
   const [locationData, setLocationData] = useState({});

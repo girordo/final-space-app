@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
@@ -63,6 +64,10 @@ const AllCharacters = ({ data }) => {
       <Footer />
     </div>
   );
+};
+
+AllCharacters.propTypes = {
+  data: PropTypes.object,
 };
 
 export default AllCharacters;
