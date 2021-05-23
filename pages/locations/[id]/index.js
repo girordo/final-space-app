@@ -22,6 +22,7 @@ const Location = ({ data }) => {
   const router = useRouter();
   const { id } = router.query;
   const [locationData, setLocationData] = useState({});
+  const [notableResidentsData, setNotableResidentsData] = useState([]);
 
   const fetchData = async () => {
     const res = await fetch(`${defaultEndpoint}/${id}`);
@@ -32,6 +33,12 @@ const Location = ({ data }) => {
   useEffect(() => {
     fetchData();
   }, []);
+
+  const fetchLocationNotableResidents = async (characterURL) => {
+    const res = await fetch(`${characterURL}`);
+    const data = await res.json();
+    setNotableResidentsData(data);
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
