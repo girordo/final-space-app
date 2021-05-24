@@ -1,38 +1,25 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/location";
 
-export async function getServerSideProps() {
-  const res = await fetch(defaultEndpoint);
-  const data = await res.json();
+export async function getServerSideProps(context) {
+  const { id } = context.params;
 
+  const res = await fetch(`${defaultEndpoint}/${id}`);
+  const data = await res.json();
   return {
     props: {
-      data,
+      locationData: data,
     },
   };
 }
 
-const Location = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  const [locationData, setLocationData] = useState({});
-
-  const fetchData = async () => {
-    const res = await fetch(`${defaultEndpoint}/${id}`);
-    const data = await res.json();
-    setLocationData(data);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+const Location = ({ locationData }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
@@ -65,6 +52,10 @@ const Location = () => {
       <Footer />
     </div>
   );
+};
+
+Location.propTypes = {
+  locationData: PropTypes.array,
 };
 
 export default Location;
