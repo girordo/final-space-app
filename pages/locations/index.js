@@ -38,7 +38,7 @@ const AllLocations = ({ data }) => {
           {data.map(({ id, name, status, img_url: image }) => (
             <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
               <motion.div
-                className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
+                className="p-6 my-6 flex flex-col items-center text-left border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.4 },
@@ -48,11 +48,13 @@ const AllLocations = ({ data }) => {
                   className="rounded-2xl"
                   alt="Location from Final Space"
                 />
-                <h3 className="text-2xl font-bold">{name}</h3>
-                <h4>{status}</h4>
-                <p className="mt-4 text-xl">
-                  Find in-depth information about Next.js features and API.
-                </p>
+                <div>
+                  <h3 className="text-2xl font-bold">{name}</h3>
+                  <h4>{status}</h4>
+                  <p className="mt-4 text-xl">
+                    Find in-depth information about Next.js features and API.
+                  </p>
+                </div>
               </motion.div>
             </Link>
           ))}
