@@ -8,10 +8,19 @@ import Footer from "../../../components/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/episode";
 
-export async function getServerSideProps(context) {
-  const { id } = context.params;
+export async function getStaticPaths() {
+  const res = await fetch(defaultEndpoint);
+  const episodes = await res.json();
 
-  const res = await fetch(`${defaultEndpoint}/${id}`);
+  const paths = episodes.map((episode) => ({
+    params: { id: episode.id.toString() },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const res = await fetch(`${defaultEndpoint}/${params.id}`);
   const data = await res.json();
   return {
     props: {

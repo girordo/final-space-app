@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(defaultEndpoint);
   const data = await res.json();
 
@@ -39,23 +39,25 @@ const AllCharacters = ({ data }) => {
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
               <motion.div
-                className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg  transition-colors hover:text-primary-600 focus:text-primary-600"
+                className="p-6 my-6 flex flex-col items-center text-left border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.4 },
                 }}>
                 <img
                   src={image}
-                  className="rounded-2xl"
+                  className="rounded-2xl mb-4"
                   alt="Character from Final Space"
                 />
-                <h3 className="text-2xl font-bold">{name}</h3>
-                <h4>{status}</h4>
-                <h4>{species}</h4>
-                <h4>{gender}</h4>
-                <p className="mt-4 text-xl">
-                  Find in-depth information about Next.js features and API.
-                </p>
+                <div>
+                  <h3 className="text-2xl font-bold">{name}</h3>
+                  <h4>{status}</h4>
+                  <h4>{species}</h4>
+                  <h4>{gender}</h4>
+                  <p className="mt-4 text-xl">
+                    Find in-depth information about Next.js features and API.
+                  </p>
+                </div>
               </motion.div>
             </Link>
           ))}
