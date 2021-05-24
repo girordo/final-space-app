@@ -8,7 +8,7 @@ import Footer from "../../components/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/location";
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch(defaultEndpoint);
   const data = await res.json();
 
