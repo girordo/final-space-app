@@ -21,7 +21,7 @@ export async function getServerSideProps() {
 
 const AllLocations = ({ data }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Localizações</title>
         <link rel="icon" href="/favicon.ico" />
@@ -35,7 +35,7 @@ const AllLocations = ({ data }) => {
           </h1>
         </h1>
         <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
-          {data.map(({ id, name, img_url: image }) => (
+          {data.map(({ id, name, status, img_url: image }) => (
             <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
               <motion.div
                 className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
@@ -64,7 +64,7 @@ const AllLocations = ({ data }) => {
 };
 
 AllLocations.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
 };
 
 export default AllLocations;

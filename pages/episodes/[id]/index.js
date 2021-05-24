@@ -1,6 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
+import PropTypes from "prop-types";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import Header from "../../../components/Header";
@@ -8,31 +8,19 @@ import Footer from "../../../components/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/episode";
 
-export async function getServerSideProps() {
-  const res = await fetch(defaultEndpoint);
+export async function getServerSideProps(context) {
+  const { id } = context.params;
+
+  const res = await fetch(`${defaultEndpoint}/${id}`);
   const data = await res.json();
   return {
     props: {
-      data,
+      episodeData: data,
     },
   };
 }
 
-const Episode = () => {
-  const router = useRouter();
-  const { id } = router.query;
-  const [episodeData, setEpisodeData] = useState({});
-
-  const fetchData = async () => {
-    const res = await fetch(`${defaultEndpoint}/${id}`);
-    const data = await res.json();
-    setEpisodeData(data);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
+const Episode = ({ episodeData }) => {
   return (
     <div>
       <Head>
@@ -68,6 +56,10 @@ const Episode = () => {
       <Footer />
     </div>
   );
+};
+
+Episode.propTypes = {
+  episodeData: PropTypes.array,
 };
 
 export default Episode;

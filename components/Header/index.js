@@ -13,7 +13,7 @@ const Header = () => {
             alt="Final Space Logo"
           />
         </Link>
-        <ul className="flex flex-row w-full block">
+        <ul className="flex flex-row w-full">
           <li className="hover:text-primary-600 text-xl font-semibold">
             <Link href="/characters">Personagens</Link>
           </li>
