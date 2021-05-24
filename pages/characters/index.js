@@ -29,7 +29,7 @@ const AllCharacters = ({ data }) => {
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <h1 className="flex flex-row text-6xl font-bold my-20">
-          Todos os{" "}
+          Todos os
           <h1 className="ml-4 text-primary-600 hover:text-secondary-400">
             personagens
           </h1>
@@ -39,7 +39,7 @@ const AllCharacters = ({ data }) => {
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
               <motion.div
-                className="p-6 my-6 text-left border w-96 rounded-xl shadow-lg  transition-colors hover:text-primary-600 focus:text-primary-600"
+                className="text-left border w-96 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.4 },
