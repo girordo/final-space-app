@@ -34,7 +34,7 @@ const Location = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>{locationData.name}</title>
         <link rel="icon" href="/favicon.ico" />

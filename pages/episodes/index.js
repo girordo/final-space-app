@@ -21,7 +21,7 @@ export async function getServerSideProps() {
 
 const AllEpisodes = ({ data }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Todos os episódios</title>
         <link rel="icon" href="/favicon.ico" />
@@ -30,7 +30,7 @@ const AllEpisodes = ({ data }) => {
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
         <h1 className="flex flex-row text-6xl font-bold my-20">
           Todos os
-          <h1 className="ml-4 text-primary-600 hover:text-secondary-600">
+          <h1 className="ml-4 text-primary-600 hover:text-secondary-400">
             episódios
           </h1>
         </h1>
@@ -64,7 +64,7 @@ const AllEpisodes = ({ data }) => {
 };
 
 AllEpisodes.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.array,
 };
 
 export default AllEpisodes;
