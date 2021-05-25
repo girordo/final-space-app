@@ -23,17 +23,19 @@ const AllLocations = ({ data }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
-        <title>Localizações</title>
+        <title>Todas as localizações</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="flex flex-row text-6xl font-bold my-20">
-          Todas as
-          <h1 className="text-primary-600 hover:text-secondary-400 ml-4">
-            localizações
+        <div className="sm:flex sm:flex-col lg:flex lg:flex-row">
+          <h1 className="text-6xl font-bold my-20">
+            Todas as
+            <h1 className="text-primary-600 hover:text-secondary-400 ml-4">
+              localizações
+            </h1>
           </h1>
-        </h1>
+        </div>
         <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
           {data.map(({ id, name, status, img_url: image }) => (
             <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
