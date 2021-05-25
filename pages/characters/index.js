@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Head from "next/head";
@@ -7,19 +7,23 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
+const quoteEndpoint = "https://finalspaceapi.com/api/v0/quote";
 
 export async function getStaticProps() {
-  const res = await fetch(defaultEndpoint);
-  const data = await res.json();
+  const resCharacter = await fetch(defaultEndpoint);
+  const data = await resCharacter.json();
+  const resQuote = await fetch(quoteEndpoint);
+  const dataQuote = await resQuote.json();
 
   return {
     props: {
       data,
+      dataQuote,
     },
   };
 }
 
-const AllCharacters = ({ data }) => {
+const AllCharacters = ({ data, dataQuote }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
@@ -55,8 +59,11 @@ const AllCharacters = ({ data }) => {
                   <h4>{status}</h4>
                   <h4>{species}</h4>
                   <h4>{gender}</h4>
-                  <p className="mt-4 text-xl">
-                    Find in-depth information about Next.js features and API.
+                  <p className="mt-4 text-xl">Popular quotes:</p>
+                  <p className="mt-4 text-md">
+                    {dataQuote.map(({ quote, by }) =>
+                      name === by ? quote : "",
+                    )}
                   </p>
                 </div>
               </motion.div>
@@ -71,6 +78,7 @@ const AllCharacters = ({ data }) => {
 
 AllCharacters.propTypes = {
   data: PropTypes.array,
+  dataQuote: PropTypes.array,
 };
 
 export default AllCharacters;
