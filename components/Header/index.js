@@ -9,7 +9,7 @@ const Header = () => {
           <img
             src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Final_Space_Logo.png/250px-Final_Space_Logo.png"
             width="10%"
-            className=""
+            className="mr-40"
             alt="Final Space Logo"
           />
         </Link>
