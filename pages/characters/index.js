@@ -59,10 +59,13 @@ const AllCharacters = ({ data, dataQuote }) => {
                   <h4>{status}</h4>
                   <h4>{species}</h4>
                   <h4>{gender}</h4>
-                  <p className="mt-4 text-xl">Popular quotes:</p>
                   <p className="mt-4 text-md">
                     {dataQuote.map(({ quote, by }) =>
-                      name === by ? quote : "",
+                      name === by ? (
+                        <p className="mt-4 text-xl">Popular quotes: {quote}</p>
+                      ) : (
+                        <></>
+                      ),
                     )}
                   </p>
                 </div>
