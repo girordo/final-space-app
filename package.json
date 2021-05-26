@@ -2,6 +2,16 @@
   "name": "with-tailwindcss",
   "version": "0.1.0",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint '*/**/*.{js,jsx}' --fix"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
