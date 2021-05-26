@@ -4,7 +4,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <div className="w-full h-24 flex justify-center items-center sticky top-0 bg-gray-100 shadow-md z-50">
-      <nav className="flex items-center flex-no-shrink">
+      <nav className="flex items-center">
         <Link href="/">
           <img
             src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Final_Space_Logo.png/250px-Final_Space_Logo.png"

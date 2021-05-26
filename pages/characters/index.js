@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Head from "next/head";
@@ -7,19 +7,23 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
+const quoteEndpoint = "https://finalspaceapi.com/api/v0/quote";
 
 export async function getStaticProps() {
-  const res = await fetch(defaultEndpoint);
-  const data = await res.json();
+  const resCharacter = await fetch(defaultEndpoint);
+  const data = await resCharacter.json();
+  const resQuote = await fetch(quoteEndpoint);
+  const dataQuote = await resQuote.json();
 
   return {
     props: {
       data,
+      dataQuote,
     },
   };
 }
 
-const AllCharacters = ({ data }) => {
+const AllCharacters = ({ data, dataQuote }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
@@ -28,13 +32,14 @@ const AllCharacters = ({ data }) => {
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="flex flex-row text-6xl font-bold my-20">
-          Todos os{" "}
-          <h1 className="ml-4 text-primary-600 hover:text-secondary-400">
-            personagens
+        <div className="sm:flex sm:flex-col lg:flex lg:flex-row">
+          <h1 className="text-6xl font-bold my-20">
+            Todos os
+            <h1 className="text-primary-600 hover:text-secondary-400 ml-4">
+              personagens
+            </h1>
           </h1>
-        </h1>
-
+        </div>
         <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
@@ -54,8 +59,14 @@ const AllCharacters = ({ data }) => {
                   <h4>{status}</h4>
                   <h4>{species}</h4>
                   <h4>{gender}</h4>
-                  <p className="mt-4 text-xl">
-                    Find in-depth information about Next.js features and API.
+                  <p className="mt-4 text-md">
+                    {dataQuote.map(({ quote, by }) =>
+                      name === by ? (
+                        <p className="mt-4 text-xl">Popular quotes: {quote}</p>
+                      ) : (
+                        <></>
+                      ),
+                    )}
                   </p>
                 </div>
               </motion.div>
@@ -70,6 +81,7 @@ const AllCharacters = ({ data }) => {
 
 AllCharacters.propTypes = {
   data: PropTypes.array,
+  dataQuote: PropTypes.array,
 };
 
 export default AllCharacters;
