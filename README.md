@@ -31,7 +31,7 @@
 ```bash
 
 # Clone o repositório
-$ git clone
+$ git clone https://github.com/girordo/final-space-app.git
 
 # Entre na pasta
 $ cd final-space-app
