@@ -13,20 +13,20 @@ export async function getStaticPaths() {
   const characters = await res.json();
 
   const paths = characters.map((character) => ({
-    params: { id: character.id.toString() },
+    params: { id: character.id.toString() }
   }));
 
   return { paths, fallback: false };
-}
 
-export async function getStaticProps({ params }) {
+
+        export async function getStaticProps({ params }) {
   const res = await fetch(`${defaultEndpoint}/${params.id}`);
   const data = await res.json();
   return {
     props: {
       characterData: data,
-    },
-  };
+    }
+  }
 }
 
 const Character = ({ characterData }) => {

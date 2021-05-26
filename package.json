@@ -2,16 +2,6 @@
   "name": "with-tailwindcss",
   "version": "0.1.0",
   "private": true,
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint '*/**/*.{js,jsx}' --fix"
-    ]
-  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -19,6 +9,23 @@
     "lint": "prettier --check . && eslint --ignore-path .gitignore .",
     "lint-fix": "eslint --fix .",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix -f git-log",
+      "prettier --write",
+      "git add"
+    ],
+    "*.{js,jsx}/": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{js,css,md}": "prettier --write"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
