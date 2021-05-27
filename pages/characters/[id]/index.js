@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
@@ -60,7 +59,7 @@ const Character = ({ characterData }) => {
               </li>
               <li className="flex flex-row text-sm">
                 Species:
-                <h4 className="font-semibold">{characterData.species}</h4>
+                <h2 className="font-semibold">{characterData.species}</h2>
               </li>
             </ul>
           </div>

@@ -54,9 +54,9 @@ const Episode = ({ episodeData }) => {
               </li>
               <li className="flex flex-row mb-0.5 text-sm">
                 Air Date:
-                <h4 className="font-semibold">
+                <h2 className="font-semibold">
                   {dayjs(episodeData.air_date).format("DD/MM/YYYY")}
-                </h4>
+                </h2>
               </li>
             </ul>
           </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Head from "next/head";
@@ -7,23 +7,19 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
-const quoteEndpoint = "https://finalspaceapi.com/api/v0/quote";
 
 export async function getStaticProps() {
   const resCharacter = await fetch(defaultEndpoint);
   const data = await resCharacter.json();
-  const resQuote = await fetch(quoteEndpoint);
-  const dataQuote = await resQuote.json();
 
   return {
     props: {
       data,
-      dataQuote,
     },
   };
 }
 
-const AllCharacters = ({ data, dataQuote }) => {
+const AllCharacters = ({ data }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
@@ -56,18 +52,9 @@ const AllCharacters = ({ data, dataQuote }) => {
                 />
                 <div>
                   <h3 className="text-2xl font-bold">{name}</h3>
-                  <h4>{status}</h4>
-                  <h4>{species}</h4>
-                  <h4>{gender}</h4>
-                  <p className="mt-4 text-md">
-                    {dataQuote.map(({ quote, by }) =>
-                      name === by ? (
-                        <p className="mt-4 text-xl">Popular quotes: {quote}</p>
-                      ) : (
-                        <></>
-                      ),
-                    )}
-                  </p>
+                  <h2>{status}</h2>
+                  <h2>{species}</h2>
+                  <h2>{gender}</h2>
                 </div>
               </motion.div>
             </Link>
