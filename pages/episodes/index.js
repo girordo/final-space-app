@@ -51,7 +51,7 @@ const AllEpisodes = ({ data }) => {
                   alt="Character from Final Space"
                 />
                 <div>
-                  <h3 className="text-2xl font-bold">{name}</h3>
+                  <h2 className="text-2xl font-bold">{name}</h2>
                   <p className="mt-4 text-xl">
                     Find in-depth information about Next.js features and API.
                   </p>

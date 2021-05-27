@@ -52,9 +52,9 @@ const AllCharacters = ({ data }) => {
                 />
                 <div>
                   <h3 className="text-2xl font-bold">{name}</h3>
-                  <h4>{status}</h4>
-                  <h4>{species}</h4>
-                  <h4>{gender}</h4>
+                  <h2>{status}</h2>
+                  <h2>{species}</h2>
+                  <h2>{gender}</h2>
                 </div>
               </motion.div>
             </Link>

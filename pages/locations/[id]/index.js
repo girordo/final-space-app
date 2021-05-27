@@ -52,7 +52,7 @@ const Location = ({ locationData }) => {
                 <h1 className="text-2xl font-bold">{locationData.name}</h1>
               </li>
               <li className="flex flex-row mb-0.5 text-sm">
-                Type:<h4 className="font-semibold">{locationData.type}</h4>
+                Type:<h2 className="font-semibold">{locationData.type}</h2>
               </li>
             </ul>
           </div>

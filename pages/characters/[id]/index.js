@@ -59,7 +59,7 @@ const Character = ({ characterData }) => {
               </li>
               <li className="flex flex-row text-sm">
                 Species:
-                <h4 className="font-semibold">{characterData.species}</h4>
+                <h2 className="font-semibold">{characterData.species}</h2>
               </li>
             </ul>
           </div>
