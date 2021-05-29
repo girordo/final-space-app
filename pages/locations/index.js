@@ -47,6 +47,7 @@ const AllLocations = ({ data }) => {
                 }}>
                 <img
                   src={image}
+                  loading="lazy"
                   className="rounded-2xl"
                   alt="Location from Final Space"
                 />

@@ -47,6 +47,7 @@ const AllEpisodes = ({ data }) => {
                 }}>
                 <img
                   src={image}
+                  loading="lazy"
                   className="rounded-2xl"
                   alt="Character from Final Space"
                 />

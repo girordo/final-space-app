@@ -31,7 +31,7 @@ const Quote = ({ quotesData }) => {
   return (
     <div>
       <Head>
-        <title>{quotesData.id}</title>
+        <title>Quote by: {quotesData.by}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

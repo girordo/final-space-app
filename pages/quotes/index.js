@@ -40,17 +40,14 @@ const AllQuotes = ({ data }) => {
           {data.map(({ id, quote, by, image }) => (
             <Link key={id} href="/quotes/[id]" as={`/quotes/${id}`}>
               <motion.div
-                className="p-6 my-6 flex flex-col items-center text-left border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
+                className="flex flex-wrap p-6 flex-col items-center border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.4 },
                 }}>
                 <div>
-                  <h3 className="text-2xl font-bold">{by}</h3>
+                  <h2 className="text-2xl font-bold">{by}</h2>
                   <h4>{quote}</h4>
-                  <p className="mt-4 text-xl">
-                    Find in-depth information about Next.js features and API.
-                  </p>
                 </div>
               </motion.div>
             </Link>
