@@ -41,7 +41,7 @@ const Quote = ({ quotesData }) => {
 };
 
 Quote.propTypes = {
-  quotesData: PropTypes.array,
+  quotesData: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
 
 export default Quote;

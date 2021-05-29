@@ -64,7 +64,7 @@ const Location = ({ locationData }) => {
 };
 
 Location.propTypes = {
-  locationData: PropTypes.array,
+  locationData: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
 
 export default Location;

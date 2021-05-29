@@ -4,8 +4,8 @@ const Footer = () => {
   return (
     <footer className="flex justify-center items-center w-full h-24 border-t bg-gray-100">
       <div className="flex-col">
-        <div className="flex mt-4">
-          <p>
+        <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row mt-4">
+          <p className="flex flex-col items-center md:flex-row lg:flex-row xl:flex-row">
             Made with
             <span aria-label="Heart Purple Emoji" role="img" className="mx-2">
               💜

@@ -68,7 +68,7 @@ const Episode = ({ episodeData }) => {
 };
 
 Episode.propTypes = {
-  episodeData: PropTypes.array,
+  episodeData: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
 
 export default Episode;
