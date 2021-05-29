@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
-const defaultEndpoint = "https://finalspaceapi.com/api/v0/location";
+const defaultEndpoint = "https://finalspaceapi.com/api/v0/quote";
 
 export async function getStaticProps() {
   const res = await fetch(defaultEndpoint);
@@ -63,7 +63,7 @@ const AllQuotes = ({ data }) => {
 };
 
 AllQuotes.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
 
 export default AllQuotes;
