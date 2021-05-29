@@ -63,7 +63,7 @@ const AllQuotes = ({ data }) => {
 };
 
 AllQuotes.propTypes = {
-  data: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
+  data: PropTypes.array,
 };
 
 export default AllQuotes;
