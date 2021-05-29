@@ -67,8 +67,7 @@ const AllCharacters = ({ data }) => {
 };
 
 AllCharacters.propTypes = {
-  data: PropTypes.array,
-  dataQuote: PropTypes.array,
+  data: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
 
 export default AllCharacters;
