@@ -40,7 +40,7 @@ const AllCharacters = ({ data }) => {
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
               <motion.div
-                className="p-6 my-6 flex flex-col items-center text-left border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
+                className="p-6 my-6 flex flex-col items-center border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.4 },
@@ -50,7 +50,7 @@ const AllCharacters = ({ data }) => {
                   className="rounded-2xl mb-4"
                   alt="Character from Final Space"
                 />
-                <div>
+                <div className="text-left">
                   <h3 className="text-2xl font-bold">{name}</h3>
                   <h2>{status}</h2>
                   <h2>{species}</h2>
