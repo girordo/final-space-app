@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
 
-const defaultEndpoint = "https://finalspaceapi.com/api/v0/quotes";
+const defaultEndpoint = "https://finalspaceapi.com/api/v0/quote";
 
 export async function getStaticPaths() {
   const res = await fetch(defaultEndpoint);
@@ -31,7 +31,7 @@ const Quote = ({ quotesData }) => {
   return (
     <div>
       <Head>
-        <title>{quotesData.name}</title>
+        <title>{quotesData.id}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
