@@ -67,7 +67,7 @@ const AllEpisodes = ({ data }) => {
 };
 
 AllEpisodes.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
 
 export default AllEpisodes;
