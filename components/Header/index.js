@@ -3,29 +3,29 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="w-full h-24 flex justify-center items-center sticky top-0 bg-gray-100 shadow-md z-50">
-      <nav className="flex items-center">
-        <Link href="/">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/en/thumb/7/7c/Final_Space_Logo.png/250px-Final_Space_Logo.png"
-            width="10%"
-            className="mr-40"
-            alt="Final Space Logo"
-          />
-        </Link>
-        <ul className="flex flex-row w-full">
-          <li className="hover:text-primary-600 text-xl font-semibold">
-            <Link href="/characters">Personagens</Link>
-          </li>
-          <li className="mx-20 hover:text-primary-600 text-xl font-semibold">
-            <Link href="/locations">Localizações</Link>
-          </li>
-          <li className="hover:text-primary-600 text-xl font-semibold">
-            <Link href="/episodes">Episódios</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    <nav className="bg-gray-100 w-full sticky top-0 shadow-md z-50 flex flex-col md:flex md:flex-row items-center justify-between">
+      <Link href="/">
+        <img src="./mooncake.png" alt="Mooncake hehe" width="80" />
+      </Link>
+      <Link href="/characters">
+        <p className="hover:text-primary-600 text-xl font-semibold">
+          Personagens
+        </p>
+      </Link>
+      <Link href="/locations">
+        <p className="hover:text-primary-600 text-xl font-semibold">
+          Localizações
+        </p>
+      </Link>
+      <Link href="/episodes">
+        <p className="hover:text-primary-600 text-xl font-semibold">
+          Episódios
+        </p>
+      </Link>
+      <Link href="/quotes">
+        <p className="hover:text-primary-600 text-xl font-semibold">Frases</p>
+      </Link>
+    </nav>
   );
 };
 

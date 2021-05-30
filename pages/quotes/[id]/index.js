@@ -18,7 +18,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const res = await fetch(`${defaultEndpoint}/${params.id}`);
+  const res = await fetch(defaultEndpoint);
   const data = await res.json();
   return {
     props: {
@@ -31,7 +31,7 @@ const Quote = ({ quotesData }) => {
   return (
     <div>
       <Head>
-        <title>{quotesData.id}</title>
+        <title>Quote by: {quotesData.by}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />

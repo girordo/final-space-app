@@ -21,7 +21,7 @@
 
 - [React](https://pt-br.reactjs.org/)
 - [Eslint](https://eslint.org/), [Prettier](https://prettier.io/), [EditorConfig](http://editorconfig.org)
-- [Docker](https://www.docker.com/) (Neste projeto prometo configurar docker)
+- [Docker](https://www.docker.com/) (Finalmente configurei o docker)
 - [Tailwind](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [React Testing Library](https://testing-library.com/) (Prometo fazer os testes também)
@@ -38,5 +38,11 @@ $ cd final-space-app
 
 # Executar o projeto
 $ yarn dev
+
+# Docker build
+$ docker build -t final-space .
+
+# Docker run
+$ docker run -p 80:80 final-space
 
 ```
