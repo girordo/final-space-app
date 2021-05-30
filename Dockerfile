@@ -1,19 +1,11 @@
-FROM node:alpine
+FROM node:15-alpine AS development
 
-RUN mkdir -p /usr/src/app
-ENV PORT 3000
+WORKDIR /app
 
-WORKDIR /usr/src/app
+ENV PORT=3000
 
-COPY package.json /usr/src/app
-COPY yarn.lock /usr/src/app
+ENV PATH /app/node_modules/.bin:$PATH
 
-ENV YARN_CACHE_FOLDER=/dev/shm/yarn_cache
-RUN yarn install --production --frozen-lockfile --silent
-
-COPY . /usr/src/app
-
-RUN yarn build
-
-EXPOSE 3000
-CMD [ "yarn", "start" ]
+COPY package.json ./
+COPY yarn.lock ./
+RUN yarn install --silent
