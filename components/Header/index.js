@@ -1,11 +1,17 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Header = () => {
   return (
     <nav className="bg-gray-100 w-full sticky top-0 shadow-md z-50 flex flex-col md:flex md:flex-row items-center justify-between">
       <Link href="/">
-        <img src="./mooncake.png" alt="Mooncake hehe" width="80" />
+        <Image
+          src="./mooncake.png"
+          lazy="loading"
+          alt="Mooncake hehe"
+          width="80"
+        />
       </Link>
       <Link href="/characters">
         <p className="hover:text-primary-600 text-xl font-semibold">
