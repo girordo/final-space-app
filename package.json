@@ -1,5 +1,5 @@
 {
-  "name": "with-tailwindcss",
+  "name": "final-space-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "prettier --check . && eslint --ignore-path .gitignore .",
     "lint-fix": "eslint --fix .",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "test": "jest --watch --env=jsdom",
+    "validate": "yarn lint && yarn test"
   },
   "husky": {
     "hooks": {
@@ -41,6 +43,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.0.4",
+    "babel-jest": "^27.0.2",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -48,6 +51,7 @@
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^6.0.0",
+    "jest": "^27.0.3",
     "postcss": "^8.1.10",
     "prettier": "^2.3.0",
     "tailwindcss": "^2.1.1"
