@@ -9,7 +9,7 @@
     "lint": "prettier --check . && eslint --ignore-path .gitignore .",
     "lint-fix": "eslint --fix .",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "test": "jest",
+    "test": "jest --watch",
     "validate": "yarn lint && yarn test"
   },
   "husky": {
