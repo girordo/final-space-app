@@ -24,7 +24,7 @@
 - [Docker](https://www.docker.com/) (Finalmente configurei o docker)
 - [Tailwind](https://tailwindcss.com/)
 - [Framer Motion](https://www.framer.com/motion/)
-- [React Testing Library](https://testing-library.com/) (Prometo fazer os testes também)
+- [React Testing Library](https://testing-library.com/) (EU JURO QUE TENTEI)
 
 ### Como usar
 
