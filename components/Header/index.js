@@ -3,13 +3,16 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <nav className="bg-gray-100 w-full sticky top-0 shadow-md z-50 flex flex-col md:flex md:flex-row items-center justify-between">
+    <nav
+      className="bg-gray-100 w-full sticky top-0 shadow-md z-50 flex flex-col md:flex md:flex-row items-center justify-between"
+      data-testid="header">
       <Link href="/">
         <img
           src="./mooncake.png"
           lazy="loading"
           alt="Mooncake hehe"
           width="80"
+          data-testid="mooncake"
         />
       </Link>
       <Link href="/characters">
