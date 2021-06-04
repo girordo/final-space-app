@@ -1,6 +1,8 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen, cleanup } from "@testing-library/react";
 import Page404 from "../pages/404";
+
+afterEach(cleanup);
 
 describe("404 Page", () => {
   it("should render the 404 page", () => {

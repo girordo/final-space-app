@@ -10,10 +10,8 @@ describe("Header component", () => {
 
     const header = screen.getByTestId("header");
     const mooncake = screen.getByTestId("mooncake");
-    const allLinks = screen.findAllByRole("link");
 
     expect(header).toBeInTheDocument();
     expect(mooncake).toBeInTheDocument();
-    expect(allLinks).toBeTruthy();
   });
 });
