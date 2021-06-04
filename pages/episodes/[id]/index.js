@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
 import Header from "../../../components/Header";
@@ -43,7 +42,7 @@ const Episode = ({ episodeData }) => {
           drag
           dragElastic={0.2}
           className="bg-gray-200  p-4 flex flex-col shadow-lg rounded-lg">
-          <Image
+          <img
             src={episodeData.img_url}
             className="rounded-full mr-4"
             alt="Character Final Space"

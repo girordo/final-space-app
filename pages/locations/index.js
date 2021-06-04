@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -46,7 +46,7 @@ const AllLocations = ({ data }) => {
                   scale: 1.05,
                   transition: { duration: 0.4 },
                 }}>
-                <Image
+                <img
                   src={image}
                   loading="lazy"
                   className="rounded-2xl"
@@ -70,7 +70,7 @@ const AllLocations = ({ data }) => {
 };
 
 AllLocations.propTypes = {
-  data: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
+  data: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default AllLocations;
