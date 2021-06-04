@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -46,7 +46,7 @@ const AllCharacters = ({ data }) => {
                   scale: 1.05,
                   transition: { duration: 0.4 },
                 }}>
-                <Image
+                <img
                   src={image}
                   loading="lazy"
                   className="rounded-2xl mb-4"
@@ -68,7 +68,7 @@ const AllCharacters = ({ data }) => {
 };
 
 AllCharacters.propTypes = {
-  data: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
+  data: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default AllCharacters;

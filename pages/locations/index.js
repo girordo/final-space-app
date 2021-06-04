@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+
 import { motion } from "framer-motion";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
@@ -41,12 +41,12 @@ const AllLocations = ({ data }) => {
           {data.map(({ id, name, status, img_url: image }) => (
             <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
               <motion.div
-                className="p-6 my-6 flex flex-col items-center text-left border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
+                className="flex flex-col items-center border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.4 },
                 }}>
-                <Image
+                <img
                   src={image}
                   loading="lazy"
                   className="rounded-2xl"
@@ -70,7 +70,7 @@ const AllLocations = ({ data }) => {
 };
 
 AllLocations.propTypes = {
-  data: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
+  data: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default AllLocations;

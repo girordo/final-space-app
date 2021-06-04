@@ -13,7 +13,7 @@ const Home = () => {
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <motion.h1 className="text-6xl font-bold my-8">
+        <motion.h1 className="text-6xl font-bold my-8" data-testid="titleText">
           Mais um projeto com <br />
           <a
             className="text-primary-600 hover:text-secondary-400 transition-colors"

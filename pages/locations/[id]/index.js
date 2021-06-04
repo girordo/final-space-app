@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import Header from "../../../components/Header";
 import Footer from "../../../components/Footer";
@@ -42,7 +41,7 @@ const Location = ({ locationData }) => {
           drag
           dragElastic={0.2}
           className="bg-gray-200  p-4 flex flex-col shadow-lg rounded-lg">
-          <Image
+          <img
             src={locationData.img_url}
             className="rounded-full mr-4"
             alt="Character Final Space"

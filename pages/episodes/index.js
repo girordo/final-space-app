@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
-import Image from "next/image";
+
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 
@@ -41,12 +41,12 @@ const AllEpisodes = ({ data }) => {
           {data.map(({ id, name, img_url: image }) => (
             <Link key={id} href="/episodes/[id]" as={`/episodes/${id}`}>
               <motion.div
-                className="p-6 my-6 flex flex-col items-center text-left border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
+                className="flex flex-col items-center border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.4 },
                 }}>
-                <Image
+                <img
                   src={image}
                   loading="lazy"
                   className="rounded-2xl"
@@ -69,7 +69,7 @@ const AllEpisodes = ({ data }) => {
 };
 
 AllEpisodes.propTypes = {
-  data: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
+  data: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default AllEpisodes;
