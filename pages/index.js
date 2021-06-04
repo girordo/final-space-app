@@ -16,8 +16,7 @@ const Home = () => {
   return (
     <>
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <Header />
-        <h1 className="text-6xl font-bold my-8" data-testid="titleText">
+        <motion.h1 className="text-6xl font-bold my-8" data-testid="titleText">
           Mais um projeto com <br />
           <motion.a
             transition={bounceTransition}
@@ -33,7 +32,7 @@ const Home = () => {
             <br />
           </motion.a>
           TailwindCSS
-        </h1>
+        </motion.h1>
 
         <p className="mt-3 text-2xl">
           Só que dessa vez consumindo a API do Final Space
