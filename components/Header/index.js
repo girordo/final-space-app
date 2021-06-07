@@ -1,39 +1,44 @@
-import React from "react";
-import Link from "next/link";
+import { useRef } from "react";
+import { motion, useCycle } from "framer-motion";
+import { useDimensions } from "../../utils/useDimensions";
+import { MenuToggle } from "./MenuToggle";
+import { Navigation } from "./Navigation";
+
+const sidebar = {
+  open: (height = 1000) => ({
+    clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      restDelta: 2,
+    },
+  }),
+  closed: {
+    clipPath: "circle(30px at 40px 40px)",
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};
 
 const Header = () => {
+  const [isOpen, toggleOpen] = useCycle(false, true);
+  const containerRef = useRef(null);
+  const { height } = useDimensions(containerRef);
+
   return (
-    <nav
-      className="bg-gray-100 w-full sticky top-0 shadow-md z-50 flex flex-col md:flex md:flex-row items-center justify-between"
-      data-testid="header">
-      <Link href="/">
-        <img
-          src="./mooncake.png"
-          lazy="loading"
-          alt="Mooncake hehe"
-          width="80"
-          data-testid="mooncake"
-        />
-      </Link>
-      <Link href="/characters">
-        <p className="hover:text-primary-600 text-xl font-semibold">
-          Personagens
-        </p>
-      </Link>
-      <Link href="/locations">
-        <p className="hover:text-primary-600 text-xl font-semibold">
-          Localizações
-        </p>
-      </Link>
-      <Link href="/episodes">
-        <p className="hover:text-primary-600 text-xl font-semibold">
-          Episódios
-        </p>
-      </Link>
-      <Link href="/quotes">
-        <p className="hover:text-primary-600 text-xl font-semibold">Frases</p>
-      </Link>
-    </nav>
+    <motion.nav
+      initial={false}
+      animate={isOpen ? "open" : "closed"}
+      custom={height}
+      ref={containerRef}>
+      <motion.div className="background" variants={sidebar} />
+      <Navigation />
+      <MenuToggle toggle={() => toggleOpen()} />
+    </motion.nav>
   );
 };
 
