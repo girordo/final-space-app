@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import mooncake from "../../public/mooncake.png";
 
 const Header = () => {
   return (
@@ -8,7 +9,7 @@ const Header = () => {
       data-testid="header">
       <Link href="/">
         <img
-          src="./mooncake.png"
+          src={mooncake}
           lazy="loading"
           alt="Mooncake hehe"
           width="80"
