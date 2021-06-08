@@ -39,10 +39,4 @@ $ cd final-space-app
 # Executar o projeto
 $ yarn dev
 
-# Docker build
-$ docker build -t final-space .
-
-# Docker run
-$ docker run -p 80:80 final-space
-
 ```
