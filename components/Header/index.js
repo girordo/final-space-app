@@ -8,7 +8,7 @@ const Header = () => {
       data-testid="header">
       <Link href="/">
         <img
-          src="./mooncake.png"
+          src="/mooncake.png"
           lazy="loading"
           alt="Mooncake hehe"
           width="80"
