@@ -4,23 +4,21 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const bounceTransition = {
-  y: {
-    duration: 0.4,
-    yoyo: Infinity,
-    ease: "easeOut",
-  },
-};
-
 const Home = () => {
   return (
     <>
       <Header />
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <Head>
-          <title>Final Space App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+        <motion.h1 className="text-6xl font-bold my-8" data-testid="titleText">
+          Mais um projeto com <br />
+          <a
+            className="text-primary-600 hover:text-secondary-400 transition-colors"
+            href="https://nextjs.org">
+            Next.js!
+            <br />
+          </a>
+          TailwindCSS
+        </motion.h1>
 
         <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
           <h1 className="text-6xl font-bold my-8" data-testid="titleText">

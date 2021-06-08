@@ -45,8 +45,7 @@ const AllCharacters = ({ data }) => {
                 whileHover={{
                   scale: 1.05,
                   transition: { duration: 0.4 },
-                }}
-                whileTap={{ scale: 0.9 }}>
+                }}>
                 <img
                   src={image}
                   loading="lazy"
