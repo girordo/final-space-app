@@ -52,7 +52,7 @@ const AllLocations = ({ data }) => {
                   className="rounded-2xl"
                   alt="Location from Final Space"
                 />
-                <div>
+                <div className="p-4">
                   <h3 className="text-2xl font-bold">{name}</h3>
                   <h4>{status}</h4>
                   <p className="mt-4 text-xl">
