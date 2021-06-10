@@ -16,22 +16,24 @@ const Header = () => {
         />
       </Link>
       <Link href="/characters">
-        <p className="hover:text-primary-600 text-xl font-semibold">
+        <p className="hover:text-primary-600 text-xl font-semibold transition-colors">
           Personagens
         </p>
       </Link>
       <Link href="/locations">
-        <p className="hover:text-primary-600 text-xl font-semibold">
+        <p className="hover:text-primary-600 text-xl font-semibold transition-colors">
           Localizações
         </p>
       </Link>
       <Link href="/episodes">
-        <p className="hover:text-primary-600 text-xl font-semibold">
+        <p className="hover:text-primary-600 text-xl font-semibold transition-colors">
           Episódios
         </p>
       </Link>
       <Link href="/quotes">
-        <p className="hover:text-primary-600 text-xl font-semibold">Frases</p>
+        <p className="hover:text-primary-600 text-xl font-semibold transition-colors">
+          Frases
+        </p>
       </Link>
     </nav>
   );
