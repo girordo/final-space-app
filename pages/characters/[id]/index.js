@@ -40,7 +40,7 @@ const Character = ({ characterData }) => {
       <main className="flex flex-col items-center justify-center w-full min-h-screen flex-1 px-20 text-center">
         <motion.section
           drag
-          dragElastic={0.2}
+          dragElastic={0.4}
           className="bg-gray-200  p-4 flex flex-col shadow-lg rounded-lg">
           <img
             src={characterData.img_url}
@@ -48,7 +48,7 @@ const Character = ({ characterData }) => {
             alt="Character Final Space"
           />
           <div className="flex flex-col justify-center hover:text-secondary-800 transition-colors">
-            <ul className="text-left">
+            <ul className="text-left transition-colors">
               <li className="mb-4">
                 <h1 className="text-2xl font-bold">{characterData.name}</h1>
               </li>

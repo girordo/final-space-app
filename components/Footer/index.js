@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -9,9 +10,14 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row mt-4">
           <p className="flex flex-col items-center md:flex-row lg:flex-row xl:flex-row">
             Made with
-            <span aria-label="Heart Purple Emoji" role="img" className="mx-2">
+            <motion.span
+              aria-label="Heart Purple Emoji"
+              role="img"
+              className="mx-2"
+              whileHover={{ scale: 1.4, originX: 0 }}
+              transition={{ type: "spring", stiffness: 400 }}>
               💜
-            </span>
+            </motion.span>
             by
           </p>
           <a
