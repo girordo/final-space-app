@@ -42,9 +42,9 @@ const AllEpisodes = ({ data }) => {
             <Link key={id} href="/episodes/[id]" as={`/episodes/${id}`}>
               <motion.div
                 className="flex flex-col items-center border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.4 },
+                whileTap={{
+                  scale: 0.92,
+                  transition: { duration: 0.2 },
                 }}>
                 <img
                   src={image}

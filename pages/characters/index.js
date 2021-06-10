@@ -41,10 +41,10 @@ const AllCharacters = ({ data }) => {
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
               <motion.div
-                className="flex flex-col items-center border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.4 },
+                className="flex flex-col items-center  w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
+                whileTap={{
+                  scale: 0.92,
+                  transition: { duration: 0.2 },
                 }}>
                 <img
                   src={image}

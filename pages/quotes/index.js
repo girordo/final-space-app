@@ -41,21 +41,22 @@ const AllQuotes = ({ data }) => {
           {data.map(({ id, quote, by, image }) => (
             <Link key={id} href="/quotes/[id]" as={`/quotes/${id}`}>
               <motion.div
-                className="flex flex-wrap p-6 flex-col items-center border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.4 },
+                className="flex p-6 flex-row items-center border w-80 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
+                whileTap={{
+                  scale: 0.92,
+                  transition: { duration: 0.2 },
                 }}>
-                <div>
+                <div className="flex flex-col items-center">
                   <img
                     src={image}
                     loading="lazy"
-                    className="rounded-2xl"
+                    className="rounded-full"
+                    width="58%"
                     alt={`Quote from ${by}`}
                   />
-                  <h2 className="text-2xl font-bold">{by}</h2>
-                  <h4>{quote}</h4>
+                  <h2 className="font-bold">{by}</h2>
                 </div>
+                <h4 className="text-left">{quote}</h4>
               </motion.div>
             </Link>
           ))}
