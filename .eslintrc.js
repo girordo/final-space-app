@@ -35,5 +35,6 @@ module.exports = {
         aspects: ["invalidHref", "preferButton"],
       },
     ],
+    "jsx-a11y/accessible-emoji": "off",
   },
 };
