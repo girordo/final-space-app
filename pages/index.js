@@ -10,6 +10,7 @@ const Home = () => {
       <Head>
         <title>Final Space App</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta description="Just a simple page with consuming final space API working on NextJS" />
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center flex-1 px-20 text-center mb-10">
