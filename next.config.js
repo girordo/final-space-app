@@ -32,8 +32,9 @@ const securityHeaders = [
     value: "origin-when-cross-origin",
   },
   {
-  key: 'Content-Security-Policy',
-  value: "script-src 'self' https://finalspaceapi.com/api/"
+    key: "Content-Security-Policy",
+    value: "script-src 'self' https://finalspaceapi.com/api/",
+  },
 ];
 
 module.exports = {
