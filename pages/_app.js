@@ -1,7 +1,8 @@
 import "tailwindcss/tailwind.css";
 import { motion, AnimatePresence } from "framer-motion";
+import PropTypes from "prop-types";
 
-function MyApp({ Component, pageProps, router }) {
+const MyApp = ({ Component, pageProps, router }) => {
   return (
     <AnimatePresence>
       <motion.div
@@ -20,6 +21,8 @@ function MyApp({ Component, pageProps, router }) {
       </motion.div>
     </AnimatePresence>
   );
-}
+};
+
+MyApp.propTypes = {};
 
 export default MyApp;
