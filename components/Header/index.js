@@ -7,7 +7,7 @@ const Header = () => {
     <nav
       className="bg-gray-100 w-full h-24 sticky top-0 shadow-md z-50 flex flex-col md:flex md:flex-row items-center justify-center"
       data-testid="header">
-      <div className="relative flex justify-around">
+      <menu className="relative flex justify-around">
         <Link href="/characters">
           <motion.p
             className="hover:text-primary-600 text-xl font-semibold transition-colors"
@@ -40,7 +40,7 @@ const Header = () => {
             Frases
           </motion.p>
         </Link>
-      </div>
+      </menu>
     </nav>
   );
 };

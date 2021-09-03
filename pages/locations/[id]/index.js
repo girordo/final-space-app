@@ -30,7 +30,7 @@ export async function getStaticProps({ params }) {
 
 const Location = ({ locationData }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <section className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>{locationData.name}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -46,7 +46,7 @@ const Location = ({ locationData }) => {
             className="rounded-full mr-4"
             alt="Character Final Space"
           />
-          <div className="flex flex-col justify-center hover:text-secondary-800 transition-colors">
+          <section className="flex flex-col justify-center hover:text-secondary-800 transition-colors">
             <ul className="text-left">
               <li className="mb-4">
                 <h1 className="text-2xl font-bold">{locationData.name}</h1>
@@ -55,11 +55,11 @@ const Location = ({ locationData }) => {
                 Type:<h2 className="font-semibold">{locationData.type}</h2>
               </li>
             </ul>
-          </div>
+          </section>
         </motion.section>
       </main>
       <Footer />
-    </div>
+    </section>
   );
 };
 

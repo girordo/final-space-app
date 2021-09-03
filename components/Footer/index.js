@@ -6,8 +6,8 @@ const Footer = () => {
     <footer
       className="flex justify-center items-center w-full h-24 border-t bg-gray-100"
       data-testid="footer">
-      <div className="flex-col">
-        <div className="flex flex-col md:flex-row lg:flex-row xl:flex-row mt-4">
+      <section className="flex-col">
+        <section className="flex flex-col md:flex-row lg:flex-row xl:flex-row mt-4">
           <p className="flex flex-col items-center md:flex-row lg:flex-row xl:flex-row">
             Made with
             <motion.span
@@ -27,8 +27,8 @@ const Footer = () => {
             rel="noreferrer">
             /girordo
           </a>
-        </div>
-      </div>
+        </section>
+      </section>
     </footer>
   );
 };

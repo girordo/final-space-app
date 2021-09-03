@@ -29,15 +29,15 @@ const AllCharacters = ({ data }) => {
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <div className="sm:flex sm:flex-col lg:flex lg:flex-row">
+        <section className="sm:flex sm:flex-col lg:flex lg:flex-row">
           <h1 className="text-6xl font-bold my-20">
             Todos os
             <h1 className="text-primary-600 hover:text-secondary-400 ml-4">
               personagens
             </h1>
           </h1>
-        </div>
-        <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
+        </section>
+        <section className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
           {data.map(({ id, name, status, species, gender, img_url: image }) => (
             <Link key={id} href="/characters/[id]" as={`/characters/${id}`}>
               <motion.div
@@ -60,7 +60,7 @@ const AllCharacters = ({ data }) => {
               </motion.div>
             </Link>
           ))}
-        </div>
+        </section>
       </main>
       <Footer />
     </div>

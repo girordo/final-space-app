@@ -22,22 +22,22 @@ export async function getStaticProps() {
 
 const AllEpisodes = ({ data }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <section className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Todos os episódios</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <div className="sm:flex sm:flex-col lg:flex lg:flex-row">
+        <section className="sm:flex sm:flex-col lg:flex lg:flex-row">
           <h1 className="text-6xl font-bold my-20">
             Todos os
             <h1 className="text-primary-600 hover:text-secondary-400 ml-4">
               episódios
             </h1>
           </h1>
-        </div>
-        <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
+        </section>
+        <section className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
           {data.map(({ id, name, img_url: image }) => (
             <Link key={id} href="/episodes/[id]" as={`/episodes/${id}`}>
               <motion.div
@@ -61,10 +61,10 @@ const AllEpisodes = ({ data }) => {
               </motion.div>
             </Link>
           ))}
-        </div>
+        </section>
       </main>
       <Footer />
-    </div>
+    </section>
   );
 };
 

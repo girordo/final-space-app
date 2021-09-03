@@ -22,25 +22,25 @@ export async function getStaticProps() {
 
 const AllQuotes = ({ data }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <section className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Todas as frases</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <div className="sm:flex sm:flex-col lg:flex lg:flex-row">
+        <section className="sm:flex sm:flex-col lg:flex lg:flex-row">
           <h1 className="text-6xl font-bold my-20">
             Todas as
             <h1 className="text-primary-600 hover:text-secondary-400 ml-4">
               frases
             </h1>
           </h1>
-        </div>
-        <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
+        </section>
+        <section className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
           {data.map(({ id, quote, by, image }) => (
             <Link key={id} href="/quotes/[id]" as={`/quotes/${id}`}>
-              <motion.div
+              <motion.section
                 className="flex p-6 flex-row items-center border w-80 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileTap={{
                   scale: 0.92,
@@ -57,13 +57,13 @@ const AllQuotes = ({ data }) => {
                   <h2 className="font-bold">{by}</h2>
                 </div>
                 <h4 className="text-left">{quote}</h4>
-              </motion.div>
+              </motion.section>
             </Link>
           ))}
-        </div>
+        </section>
       </main>
       <Footer />
-    </div>
+    </section>
   );
 };
 

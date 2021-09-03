@@ -22,25 +22,25 @@ export async function getStaticProps() {
 
 const AllLocations = ({ data }) => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <section className="flex flex-col items-center justify-center min-h-screen">
       <Head>
         <title>Todas as localizações</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <div className="sm:flex sm:flex-col lg:flex lg:flex-row">
+        <section className="sm:flex sm:flex-col lg:flex lg:flex-row">
           <h1 className="text-6xl font-bold my-20">
             Todas as
             <h1 className="text-primary-600 hover:text-secondary-400 ml-4">
               localizações
             </h1>
           </h1>
-        </div>
-        <div className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
+        </section>
+        <section className="grid grid-cols-1 gap-2 md:grid md:grid-cols-2 md:gap-4 xl:grid xl:grid-cols-4 xl:gap-6">
           {data.map(({ id, name, status, img_url: image }) => (
             <Link key={id} href="/locations/[id]" as={`/locations/${id}`}>
-              <motion.div
+              <motion.section
                 className="flex flex-col items-center border w-72 rounded-xl shadow-lg transition-colors hover:text-primary-600 focus:text-primary-600"
                 whileTap={{
                   scale: 0.92,
@@ -59,13 +59,13 @@ const AllLocations = ({ data }) => {
                     Find in-depth information about Next.js features and API.
                   </p>
                 </div>
-              </motion.div>
+              </motion.section>
             </Link>
           ))}
-        </div>
+        </section>
       </main>
       <Footer />
-    </div>
+    </section>
   );
 };
 

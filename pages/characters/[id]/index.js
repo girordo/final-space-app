@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
 
 const Character = ({ characterData }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>{characterData.name}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -47,7 +47,7 @@ const Character = ({ characterData }) => {
             className="rounded-full mr-4"
             alt="Character Final Space"
           />
-          <div className="flex flex-col justify-center hover:text-secondary-800 transition-colors">
+          <section className="flex flex-col justify-center hover:text-secondary-800 transition-colors">
             <ul className="text-left transition-colors">
               <li className="mb-4">
                 <h1 className="text-2xl font-bold">{characterData.name}</h1>
@@ -63,11 +63,11 @@ const Character = ({ characterData }) => {
                 <h2 className="font-semibold">{characterData.species}</h2>
               </li>
             </ul>
-          </div>
+          </section>
         </motion.section>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 

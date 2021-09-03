@@ -31,7 +31,7 @@ export async function getStaticProps({ params }) {
 
 const Episode = ({ episodeData }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>{episodeData.name}</title>
         <link rel="icon" href="/favicon.ico" />
@@ -47,7 +47,7 @@ const Episode = ({ episodeData }) => {
             className="rounded-full mr-4"
             alt="Character Final Space"
           />
-          <div className="flex flex-col justify-center hover:text-secondary-800 transition-colors">
+          <section className="flex flex-col justify-center hover:text-secondary-800 transition-colors">
             <ul className="text-left">
               <li className="mb-4">
                 <h1 className="text-2xl font-bold">{episodeData.name}</h1>
@@ -59,11 +59,11 @@ const Episode = ({ episodeData }) => {
                 </h2>
               </li>
             </ul>
-          </div>
+          </section>
         </motion.section>
       </main>
       <Footer />
-    </div>
+    </>
   );
 };
 
