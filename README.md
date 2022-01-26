@@ -4,6 +4,9 @@
     alt="Logo Final Space"
    />
    <p>Se vira nos 30 com API do Espaço Final (versão brasileira, Hebert Richards)</p>
+  <a href="https://gitmoji.dev">
+   <img src="https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square" alt="Gitmoji">
+  </a>
 </div>
 
 <h1 align="center">Final Space App</h1>
