@@ -3,7 +3,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const Home = () => {
+export default Home = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
@@ -26,5 +26,3 @@ const Home = () => {
     </div>
   );
 };
-
-export default Home;

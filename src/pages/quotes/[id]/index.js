@@ -27,7 +27,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Quote = ({ quotesData }) => {
+export default Quote = ({ quotesData }) => {
   return (
     <div>
       <Head>
@@ -43,5 +43,3 @@ const Quote = ({ quotesData }) => {
 Quote.propTypes = {
   quotesData: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
-
-export default Quote;

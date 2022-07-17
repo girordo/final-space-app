@@ -28,7 +28,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Location = ({ locationData }) => {
+export default Location = ({ locationData }) => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen">
       <Head>
@@ -66,5 +66,3 @@ const Location = ({ locationData }) => {
 Location.propTypes = {
   locationData: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
-
-export default Location;

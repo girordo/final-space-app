@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-const NotFoundPage = () => {
+export default NotFoundPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Header />
@@ -12,5 +12,3 @@ const NotFoundPage = () => {
     </div>
   );
 };
-
-export default NotFoundPage;

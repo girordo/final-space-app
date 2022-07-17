@@ -20,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-const AllQuotes = ({ data }) => {
+export default AllQuotes = ({ data }) => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen">
       <Head>
@@ -70,5 +70,3 @@ const AllQuotes = ({ data }) => {
 AllQuotes.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
 };
-
-export default AllQuotes;

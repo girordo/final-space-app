@@ -29,7 +29,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Episode = ({ episodeData }) => {
+export default Episode = ({ episodeData }) => {
   return (
     <>
       <Head>
@@ -70,5 +70,3 @@ const Episode = ({ episodeData }) => {
 Episode.propTypes = {
   episodeData: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
-
-export default Episode;

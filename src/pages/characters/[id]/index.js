@@ -29,7 +29,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Character = ({ characterData }) => {
+export default Character = ({ characterData }) => {
   return (
     <>
       <Head>
@@ -74,5 +74,3 @@ const Character = ({ characterData }) => {
 Character.propTypes = {
   characterData: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
-
-export default Character;
