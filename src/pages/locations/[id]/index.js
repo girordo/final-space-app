@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import Head from "next/head";
 import { motion } from "framer-motion";
-import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
+import Header from "../../../components/Header/Header";
+import Footer from "../../../components/Footer/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/location";
 
@@ -28,7 +28,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Location = ({ locationData }) => {
+export default Location = ({ locationData }) => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen">
       <Head>
@@ -66,5 +66,3 @@ const Location = ({ locationData }) => {
 Location.propTypes = {
   locationData: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
-
-export default Location;

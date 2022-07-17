@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 
 import { motion } from "framer-motion";
-import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
+import Header from "../../../components/Header/Header";
+import Footer from "../../../components/Footer/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
 
@@ -29,7 +29,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Character = ({ characterData }) => {
+export default Character = ({ characterData }) => {
   return (
     <>
       <Head>
@@ -74,5 +74,3 @@ const Character = ({ characterData }) => {
 Character.propTypes = {
   characterData: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
-
-export default Character;

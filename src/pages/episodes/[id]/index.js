@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import dayjs from "dayjs";
-import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
+import Header from "../../../components/Header/Header";
+import Footer from "../../../components/Footer/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/episode";
 
@@ -29,7 +29,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-const Episode = ({ episodeData }) => {
+export default Episode = ({ episodeData }) => {
   return (
     <>
       <Head>
@@ -70,5 +70,3 @@ const Episode = ({ episodeData }) => {
 Episode.propTypes = {
   episodeData: PropTypes.oneOf([PropTypes.object, PropTypes.array]),
 };
-
-export default Episode;

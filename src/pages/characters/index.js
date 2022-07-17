@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import Link from "next/link";
 
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const defaultEndpoint = "https://finalspaceapi.com/api/v0/character";
 
@@ -20,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-const AllCharacters = ({ data }) => {
+export default AllCharacters = ({ data }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
@@ -70,5 +70,3 @@ const AllCharacters = ({ data }) => {
 AllCharacters.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object),
 };
-
-export default AllCharacters;
