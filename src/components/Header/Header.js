@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
 
 const Header = () => {
   return (
@@ -9,36 +8,24 @@ const Header = () => {
       data-testid="header">
       <menu className="relative flex justify-around">
         <Link href="/characters">
-          <motion.p
-            className="hover:text-primary-600 text-xl font-semibold transition-colors"
-            whileHover={{ scale: 1.4, originX: 0 }}
-            transition={{ type: "spring", stiffness: 400 }}>
+          <p className="hover:text-primary-600 text-xl font-semibold transition-colors">
             Personagens
-          </motion.p>
+          </p>
         </Link>
         <Link href="/locations">
-          <motion.p
-            className="hover:text-primary-600 text-xl font-semibold transition-colors"
-            whileHover={{ scale: 1.4, originX: 0 }}
-            transition={{ type: "spring", stiffness: 400 }}>
+          <p className="hover:text-primary-600 text-xl font-semibold transition-colors">
             Localizações
-          </motion.p>
+          </p>
         </Link>
         <Link href="/episodes">
-          <motion.p
-            className="hover:text-primary-600 text-xl font-semibold transition-colors"
-            whileHover={{ scale: 1.4, originX: 0 }}
-            transition={{ type: "spring", stiffness: 400 }}>
+          <p className="hover:text-primary-600 text-xl font-semibold transition-colors">
             Episódios
-          </motion.p>
+          </p>
         </Link>
         <Link href="/quotes">
-          <motion.p
-            className="hover:text-primary-600 text-xl font-semibold transition-colors"
-            whileHover={{ scale: 1.4, originX: 0 }}
-            transition={{ type: "spring", stiffness: 400 }}>
+          <p className="hover:text-primary-600 text-xl font-semibold transition-colors">
             Frases
-          </motion.p>
+          </p>
         </Link>
       </menu>
     </nav>
