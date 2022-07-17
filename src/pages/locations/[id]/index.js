@@ -28,7 +28,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default Location = ({ locationData }) => {
+export const Location = ({ locationData }) => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen">
       <Head>

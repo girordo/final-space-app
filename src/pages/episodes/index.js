@@ -20,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-export default AllEpisodes = ({ data }) => {
+export const AllEpisodes = ({ data }) => {
   return (
     <section className="flex flex-col items-center justify-center min-h-screen">
       <Head>

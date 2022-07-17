@@ -29,7 +29,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default Episode = ({ episodeData }) => {
+export const Episode = ({ episodeData }) => {
   return (
     <>
       <Head>

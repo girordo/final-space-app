@@ -26,7 +26,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default Quote = ({ quotesData }) => {
+export const Quote = ({ quotesData }) => {
   return (
     <div>
       <Head>

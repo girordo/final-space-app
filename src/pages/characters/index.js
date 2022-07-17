@@ -20,7 +20,7 @@ export async function getStaticProps() {
   };
 }
 
-export default AllCharacters = ({ data }) => {
+export const AllCharacters = ({ data }) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>

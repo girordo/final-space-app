@@ -29,7 +29,7 @@ export async function getStaticProps({ params }) {
   };
 }
 
-export default Character = ({ characterData }) => {
+export const Character = ({ characterData }) => {
   return (
     <>
       <Head>
