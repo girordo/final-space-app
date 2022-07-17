@@ -1,7 +1,7 @@
 import "tailwindcss/tailwind.css";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default MyApp = ({ Component, pageProps, router }) => {
+const MyApp = ({ Component, pageProps, router }) => {
   return (
     <AnimatePresence>
       <motion.div
@@ -23,3 +23,5 @@ export default MyApp = ({ Component, pageProps, router }) => {
 };
 
 MyApp.propTypes = {};
+
+export default MyApp;
